@@ -41,3 +41,78 @@ In the age of machine learning methods in the computational sciences, methods su
 - Rolling windows showed that some periods passed the normality tests (e.g., ~70% of 60-day windows for NVDA)
 
 - Log returns are not always normal, they can show normal-like behavior over shorter, stable periods.
+
+## ⚖️ **Mini Project 3: Option Sensitivities in the Black-Scholes Model**
+
+**Objective:** Explore and visualize option sensitivities (Greeks) using the Black-Scholes model.
+
+**Methods:**
+
+- Implemented call and put pricing formulas
+- Calculated and plotted:
+  - **Delta**: sensitivity to changes in the underlying stock price
+  - **Theta**: sensitivity to time decay
+- Used a range of spot prices to examine behaviors
+
+**Results:**
+
+- **Call Delta** increases with spot price; **Put Delta** is negative and decreases
+- **Theta** shows stronger decay near expiration and for at-the-money options
+
+- The Greeks give important intuition for hedging and risk management. We observed classic textbook behavior in visual form.
+
+---
+
+## 📉 **Mini Project 4: Heston Model, Delta Hedging & ML**
+
+**Objective:** Model non-constant volatility with the Heston model, simulate hedging, and use ML to predict hedge performance.
+
+**Methods:**
+
+1. **Simulated paths using the Heston Model**
+
+   - Introduced stochastic volatility
+   - Compared to Geometric Brownian Motion (GBM)
+
+2. **Implemented Delta Hedging**
+
+   - Hedged short call positions
+   - Tracked P&L under different rebalance frequencies
+   - Compared P&L under GBM vs Heston
+
+3. **Hedging Error Analysis**
+
+   - Evaluated variance in hedging error over time
+   - Showed that stochastic volatility makes hedging less precise
+
+4. **Machine Learning Classification**
+
+   - Framed a classification task: Will a hedge produce high error?
+   - Used features like final price, realized vol, moneyness
+   - Trained models:
+     - **Logistic Regression** (baseline)
+     - **Random Forest**
+     - **XGBoost**
+
+**Results:**
+
+- **XGBoost** achieved:
+  - 93.5% accuracy
+  - 98% precision on identifying high-error cases
+- Feature importance showed **final price** and **realized volatility** were the most predictive
+- Added a **vega hedging strategy** using a second option, which improved performance in volatile scenarios
+
+- The Heston model captures more realistic market dynamics but is harder to hedge.
+- Machine learning can help identify hedge risk ahead of time and potentially optimize strategies.
+
+---
+
+## 🚀 Conclusion
+
+This repo reflects a full progression through real-world financial modeling problems, from classicial portfolio theory to modern methods in machine learning for hedge evaluation. Future work may include the implementation of other ML models like transformers. We may also explore other volatility models like SABR or GARCH. 
+
+Thanks for checking it out!
+
+---
+
+
