@@ -61,7 +61,6 @@ In the age of machine learning methods in the computational sciences, methods su
 
 - The Greeks give important intuition for hedging and risk management. We observed classic textbook behavior in visual form.
 
----
 
 ## 📉 **Mini Project 4: Heston Model, Delta Hedging & ML**
 
@@ -105,7 +104,6 @@ In the age of machine learning methods in the computational sciences, methods su
 - The Heston model captures more realistic market dynamics but is harder to hedge.
 - Machine learning can help identify hedge risk ahead of time and potentially optimize strategies.
 
----
 
 ## 🚀 Conclusion
 
