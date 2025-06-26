@@ -72,9 +72,9 @@ In the age of machine learning methods in the computational sciences, methods su
 
    - Introduced stochastic volatility
    - Parameters:  
-     - Initial spot price \( S_0 = 100 \), initial variance \( v_0 = 0.04 \)  
-     - Mean reversion \( \kappa = 2.0 \), long-run variance \( \theta = 0.04 \)  
-     - Vol of vol \( \sigma_v = 0.3 \), correlation \( \rho = -0.7 \), \( T = 1 \text{ year} \)
+     - Initial spot price $S_0 = 100$, initial variance $v_0 = 0.04$ 
+     - Mean reversion $\kappa = 2.0$, long-run variance $\theta = 0.04$  
+     - Vol of vol $\sigma_v = 0.3$, correlation $\rho = -0.7$, $T = 1 \text{ year}$
    - Compared to Geometric Brownian Motion (GBM)
 
 2. **Implemented Delta Hedging**
