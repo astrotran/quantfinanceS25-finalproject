@@ -71,6 +71,10 @@ In the age of machine learning methods in the computational sciences, methods su
 1. **Simulated paths using the Heston Model**
 
    - Introduced stochastic volatility
+   - Parameters:  
+     - Initial spot price \( S_0 = 100 \), initial variance \( v_0 = 0.04 \)  
+     - Mean reversion \( \kappa = 2.0 \), long-run variance \( \theta = 0.04 \)  
+     - Vol of vol \( \sigma_v = 0.3 \), correlation \( \rho = -0.7 \), \( T = 1 \text{ year} \)
    - Compared to Geometric Brownian Motion (GBM)
 
 2. **Implemented Delta Hedging**
@@ -81,8 +85,10 @@ In the age of machine learning methods in the computational sciences, methods su
 
 3. **Hedging Error Analysis**
 
-   - Evaluated variance in hedging error over time
-   - Showed that stochastic volatility makes hedging less precise
+   - Computed hedging error over time and compared **standard deviations**:
+     - Heston: ~6.42  
+     - GBM: ~6.36  
+   - Demonstrated that **stochastic volatility increases hedge error variance**.
 
 4. **Machine Learning Classification**
 
@@ -92,6 +98,13 @@ In the age of machine learning methods in the computational sciences, methods su
      - **Logistic Regression** (baseline)
      - **Random Forest**
      - **XGBoost**
+    
+5. **Volatility Smile Analysis**  
+   - Generated a **volatility smile** by plotting implied volatilities of Heston-simulated call prices across strikes.  
+   - Found the classic smile shape:
+     - Higher IV for deep in-the-money and out-of-the-money options
+     - Peak IV near at-the-money
+   - This confirmed the Heston model’s ability to **capture market-observed IV behavior**, unlike Black-Scholes.
 
 **Results:**
 
@@ -99,7 +112,7 @@ In the age of machine learning methods in the computational sciences, methods su
   - 93.5% accuracy
   - 98% precision on identifying high-error cases
 - Feature importance showed **final price** and **realized volatility** were the most predictive
-- Added a **vega hedging strategy** using a second option, which improved performance in volatile scenarios
+- Added a **vega hedging strategy** using a second option, which improved performance in volatile scenarios by reducing exposure to volatility shifts in highly stochastic environments.
 
 - The Heston model captures more realistic market dynamics but is harder to hedge.
 - Machine learning can help identify hedge risk ahead of time and potentially optimize strategies.
